@@ -1,0 +1,10 @@
+if (!M.rotorlist()[0].reflecting()) {
+            throw error("First Rotor should be a reflector");
+        }
+
+        if (msg.length() < 5) {
+                    _output.println(msg);
+                } else {
+                    _output.print(msg.substring(0, 5) + " ");
+                    printMessageLine(msg.substring(5));
+                }

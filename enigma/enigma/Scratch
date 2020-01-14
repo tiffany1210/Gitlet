@@ -1,0 +1,62 @@
+while (nextline.isEmpty() || _input.hasNextLine()){
+        while(nextline.isEmpty()){
+        printMessageLine(M.convert(nextline));
+        if(_input.hasNextLine()){
+        nextline=_input.nextLine();
+        }else{
+        break;
+        }
+        }
+        if(nextline.startsWith("*")){
+        this.setUp(M,nextline);
+        }
+        String message=_input.nextLine().replace(" ","");
+        while(message.isEmpty()){
+        _output.println();
+        message=_input.nextLine().replace(" ","");
+        }
+        while(message.matches("[A-Za-z0-9]+")){
+        String output=M.convert(message);
+        printMessageLine(output);
+        if(_input.hasNextLine()){
+        message=_input.nextLine();
+        if(!message.startsWith("*")){
+        message=message.replace(" ","");
+        }
+        }else{
+        break;
+        }
+        }
+        }
+
+
+        setup
+        if (setting.hasNext("\\*+")) {
+        setting.next("\\*+");
+        for (int i = 0; i < M.numRotors(); i++) {
+        rotors[i] = setting.next();
+        }
+        M.insertRotors(rotors);
+        int mrnum = 0;
+        for (int j = 0; j < M.rotorlist().length; j++) {
+        if (M.rotorlist()[j] instanceof MovingRotor) {
+        mrnum += 1;
+        }
+        }
+        if (M.numPawls() != mrnum) {
+        throw error("Incorrect number of Moving Rotors");
+        }
+        if (setting.hasNext(".+")) {
+        String set = setting.next();
+        M.setRotors(set);
+        if (M.numRotors() - 1 != set.length()) {
+        throw error("Incorrect length of setting");
+        }
+        }
+        String cycle = "";
+        while (setting.hasNext("(\\(.+\\))*")) {
+        cycle += setting.next();
+        }
+        Permutation plugboard = new Permutation(cycle, _alphabet);
+        M.setPlugboard(plugboard);
+        }
