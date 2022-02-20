@@ -10,7 +10,3 @@ A version-control system is essentially a backup system for related collections 
   4. Maintaining related sequences of commits, called branches.
   5. Merging changes made in one branch into another. The point of a version-control system is to help you when creating complicated (or even not-so-complicated) projects, or when collaborating with others on a project. You save versions of the project periodically. If at some later point in time you accidentally mess up your code, then you can restore your source to a previously committed version (without losing any of the changes you made since then). If your collaborators make changes embodied in a commit, you can incorporate (merge) these changes into your own version.
 
-
-**ENIGMA**
-
-This programming assignment is intended to exercise a few useful data structures and an object-based view of a programming problem.
